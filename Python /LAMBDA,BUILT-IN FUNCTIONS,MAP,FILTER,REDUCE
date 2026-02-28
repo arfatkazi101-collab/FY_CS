@@ -1,0 +1,35 @@
+# with built-in functions 
+nums = [3, 1, 4, 1, 5, 9]
+print(sorted(nums, key=lambda x: -x))
+# [9, 5, 4, 3, 1, 1]
+
+# lambda functions (anonymous)
+square = lambda x: x ** 2
+print(square(5)) # 25
+
+
+var = [9]
+for i in var:
+    print(i**2)
+    
+
+square = lambda x: x 
+print(square(9)) 
+num_sum = lambda x: x+3
+print(num_sum(9))
+num_exponant_square = lambda x: x ** 2
+print(num_exponant_square(5)) # 25
+square = lambda x: x**2
+print(square(5)) # 25
+
+
+print(nums)
+
+
+
+# map, filter, reduce
+doubled = list(map(lambda x: x*2, nums))
+num1 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,]
+evens = list(filter(lambda x: x%2==0, num1))
+print(doubled) # [6, 2, 8, 2, 10, 18]
+print(evens)  # [4]
