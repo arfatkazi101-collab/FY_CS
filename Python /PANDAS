@@ -1,0 +1,63 @@
+# create a Dataframe
+import pandas as pd
+
+Datastructure
+
+1] SERIES
+
+2] DATAFARME
+
+# pd.series()
+# pd.DtatFrame()
+
+dict_var = {
+    "Name": ["Alice","Bob","Charlie"],
+    "Age":[25, 30, 35], 
+    "Score":[88.5, 92.3, 79.1]}
+print(type(dict_var))
+df = pd.DataFrame(dict_var)
+# series (single column)
+ages = df["Age"]
+print(ages[1])
+#quick inspections
+print(df.shape)        # (3, 3)
+print(df.dtypes)       # column types
+print(df.describe())   # statistics
+
+#===================================
+PANDAS
+#===================================
+
+
+import pandas as pd
+
+df = pd.DataFrame({
+    "Name":["Alice","Bob","Charlie","Diana"],
+    "Dept":["IT","HR","IT","HR"],
+    "Salary":[70000, 65000, 72000, 80000]    
+})
+df[df["Dept"] == "HR"]
+# filtering
+it_team = df[df["Dept"] =="IT"]
+print(it_team)
+high_pay = df[df["Salary"] > 70000]
+print(high_pay)
+#sorting
+sorted_df = df.sort_values("Salary",
+                           ascending=False)
+#new column
+df["Bonus"] = df["Salary"] * 0.1
+
+#GroupBy - aggregate
+dept_avg = df.groupby("Dept")["Salary"].mean()
+print(dept_avg)
+
+
+# Dept
+# HR    68500.0
+# IT    75000.0
+
+# drop & rename
+df = df.drop(columns=["Bonus"])
+df = df.rename(columns={"Dept": "Department"})
+
